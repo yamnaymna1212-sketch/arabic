@@ -1,4 +1,5 @@
-import { Composition, Folder } from "remotion";
+import { Composition, Folder, Still } from "remotion";
+import { ThumbnailA, ThumbnailB } from "./ep1/Thumbnail";
 import { SEED_PARABLE_SECONDS, SeedParable } from "./SeedParable";
 import { EP1_SECONDS, Episode1 } from "./ep1/Episode";
 import { FPS } from "./theme";
@@ -14,6 +15,10 @@ export const RemotionRoot: React.FC = () => {
         width={1920}
         height={1080}
       />
+      <Folder name="Thumbnails">
+        <Still id="Thumb-A" component={ThumbnailA} width={1280} height={720} />
+        <Still id="Thumb-B" component={ThumbnailB} width={1280} height={720} />
+      </Folder>
       <Folder name="Shorts">
         <Composition
           id="SeedParable"
