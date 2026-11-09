@@ -7,8 +7,8 @@ export const W = 1920;
 export const H = 1080;
 export const VO = 0.6; // narration starts here
 export const N = (n: number) => n + VO;
-export const REC_START = N(141.3);
-export const REC_LEN = 24.2;
+export const REC_START = N(138.7);
+export const REC_LEN = 26.4;
 export const END = REC_START + REC_LEN + 7;
 
 export const POP = Easing.bezier(0.34, 1.56, 0.64, 1);

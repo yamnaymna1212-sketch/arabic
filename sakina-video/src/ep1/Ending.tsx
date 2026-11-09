@@ -235,11 +235,11 @@ export const Challenge: React.FC = () => {
 
 // ======================= RECITER + RECITATION =======================
 const SEGMENTS: { text: string; a: number; b: number }[] = [
-  { text: "مَّثَلُ الَّذِينَ يُنفِقُونَ أَمْوَالَهُمْ فِي سَبِيلِ اللَّهِ", a: 0.1, b: 6.0 },
-  { text: "كَمَثَلِ حَبَّةٍ أَنبَتَتْ سَبْعَ سَنَابِلَ", a: 6.0, b: 10.8 },
-  { text: "فِي كُلِّ سُنبُلَةٍ مِّائَةُ حَبَّةٍ ۗ", a: 10.9, b: 15.1 },
-  { text: "وَاللَّهُ يُضَاعِفُ لِمَن يَشَاءُ ۗ", a: 15.4, b: 19.1 },
-  { text: "وَاللَّهُ وَاسِعٌ عَلِيمٌ ﴿٢٦١﴾", a: 19.3, b: 23.9 },
+  { text: "مَّثَلُ الَّذِينَ يُنفِقُونَ أَمْوَالَهُمْ فِي سَبِيلِ اللَّهِ", a: 0.3, b: 5.8 },
+  { text: "كَمَثَلِ حَبَّةٍ أَنبَتَتْ سَبْعَ سَنَابِلَ", a: 5.85, b: 12.0 },
+  { text: "فِي كُلِّ سُنبُلَةٍ مِّائَةُ حَبَّةٍ ۗ", a: 12.1, b: 16.3 },
+  { text: "وَاللَّهُ يُضَاعِفُ لِمَن يَشَاءُ ۗ", a: 16.95, b: 20.5 },
+  { text: "وَاللَّهُ وَاسِعٌ عَلِيمٌ ﴿٢٦١﴾", a: 22.6, b: 25.5 },
 ];
 
 const Waveform: React.FC<{ active: boolean }> = ({ active }) => {
@@ -297,8 +297,8 @@ export const Recitation: React.FC = () => {
             <Mic size={48} color={C.sand} />
           </div>
           <div>
-            <div style={{ fontFamily: KUFI, fontWeight: 700, fontSize: 52, color: C.gold, lineHeight: 1.2 }}>الشيخ مشاري راشد العفاسي</div>
-            <div style={{ fontFamily: PLEX, fontWeight: 500, fontSize: 30, color: C.sand }}>تلاوة · سورة البقرة · الآية ٢٦١</div>
+            <div style={{ fontFamily: KUFI, fontWeight: 700, fontSize: 52, color: C.gold, lineHeight: 1.2 }}>الشيخ ياسر سلامة</div>
+            <div style={{ fontFamily: PLEX, fontWeight: 500, fontSize: 30, color: C.sand }}>رواية حفص عن عاصم · سورة البقرة ٢٦١</div>
           </div>
         </div>
       </div>

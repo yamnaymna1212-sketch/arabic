@@ -1,7 +1,7 @@
 # Sakina — Episode 1 credits
 
 - Narration voice: ElevenLabs ("Ahmed – Deep Arabic Documentary"), AI generated.
-- Recitation of Al-Baqarah 261: Sheikh Mishary Rashid Alafasy, per-ayah file from everyayah.com.
+- Recitation of Al-Baqarah 261: Sheikh Yaser Salamah (Hafs), Dhikr Al-Huda app, CC BY 4.0 — https://archive.org/details/dhikr-alhuda-yaser-salamah-hafs
 - Background plates and riyal photo: AI generated (ElevenLabs image models).
 - Sound effects: Kenney.nl packs (CC0, see public/sfx/KENNEY-LICENSE.txt), remotion.media samples, and ElevenLabs sound effects.
 - Icons: Lucide (ISC license).
