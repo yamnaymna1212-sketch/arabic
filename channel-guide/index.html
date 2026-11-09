@@ -1,0 +1,533 @@
+<title>دليل قناة سكينة</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Reem+Kufi:wght@500;700&display=swap">
+<style>
+/* Layout: a night-to-dawn scroll — dark teal ground, brass-gold accents, every section reads like a page of an illuminated notebook */
+:root{
+  color-scheme: dark;
+  --night:#0E2229;      /* ليل الفجر — الخلفية */
+  --night-2:#15313A;    /* سطح البطاقات */
+  --emerald:#2E6B5C;    /* زمرّدي هادئ */
+  --gold:#C9A45C;       /* نحاسي ذهبي — اللون المميز */
+  --sand:#EFE4CF;       /* رملي — النص */
+  --clay:#A8644A;       /* طيني — للتنبيه والحزن في القصة */
+  --muted:#9FB3B0;
+  --line:rgba(201,164,92,.22);
+  --f-display:"Reem Kufi","IBM Plex Sans Arabic",Tahoma,sans-serif;
+  --f-body:"IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;
+  --f-quran:"Amiri","Traditional Arabic",serif;
+}
+*{box-sizing:border-box}
+html{direction:rtl}
+body{background:var(--night);color:var(--sand);font-family:var(--f-body);font-size:16px;line-height:1.85;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1040px;margin-inline:auto;padding-block:24px 64px;display:flex;flex-direction:column;gap:72px}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;text-wrap:balance;margin:0;line-height:1.35}
+h2{font-size:clamp(1.6rem,3.4vw,2.2rem);color:var(--sand)}
+h3{font-size:1.15rem}
+p{margin:0}
+.eyebrow{font-size:.8rem;letter-spacing:.06em;color:var(--gold);font-weight:500}
+.sec-head{display:flex;flex-direction:column;gap:8px;margin-bottom:24px;max-width:65ch}
+.sec-head p{color:var(--muted)}
+section{min-width:0}
+.star{display:inline-block;width:14px;height:14px;vertical-align:middle;margin-inline-start:6px}
+
+/* hero */
+.hero{display:grid;gap:24px}
+.hero-art{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:16/9;max-width:100%;background:linear-gradient(180deg,#0E2229 0%,#1E3E46 55%,#B08A4E 100%)}
+.hero-art img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-art .badge{position:absolute;inset:auto auto 14px 14px;background:rgba(14,34,41,.78);border:1px solid var(--line);padding:4px 12px;border-radius:999px;font-size:.78rem;color:var(--sand)}
+.brand{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.logo{width:84px;height:84px;flex:none}
+.brand h1{font-size:clamp(2.6rem,7vw,4.2rem);color:var(--gold);letter-spacing:0}
+.brand .tag{font-size:1.15rem;color:var(--sand)}
+.lead{font-size:1.1rem;max-width:62ch;color:var(--sand)}
+
+/* pillars */
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.pillar{border-top:2px solid var(--gold);padding-top:14px;display:flex;flex-direction:column;gap:6px}
+.pillar svg{width:34px;height:34px;color:var(--gold)}
+.pillar p{color:var(--muted);font-size:.93rem}
+
+/* palette */
+.palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.sw{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--night-2)}
+.sw .chip{height:96px}
+.sw .meta{padding:10px 12px;display:flex;flex-direction:column;gap:2px}
+.sw b{font-family:var(--f-display);font-weight:500}
+.sw code{font-family:ui-monospace,Menlo,monospace;font-size:.8rem;color:var(--muted);direction:ltr;text-align:right}
+.sw small{color:var(--muted);font-size:.82rem;line-height:1.5}
+.ratio{display:flex;height:16px;border-radius:999px;overflow:hidden;margin-top:16px}
+.ratio-note{font-size:.85rem;color:var(--muted);margin-top:8px}
+
+/* type */
+.type-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.type-card{background:var(--night-2);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:8px}
+.type-card .sample{font-size:2rem;line-height:1.5;color:var(--sand)}
+.type-card small{color:var(--muted)}
+
+/* character */
+.chars{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.char{background:var(--night-2);border-radius:14px;padding:20px;display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:start}
+.char svg{width:110px;height:150px}
+.char dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:.92rem}
+.char dt{color:var(--gold)}
+.char dd{margin:0;color:var(--sand)}
+.char h3{margin-bottom:8px;grid-column:1/-1}
+@media (max-width:420px){.char{grid-template-columns:1fr}.char svg{margin-inline:auto}}
+
+/* icons */
+.icons{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:12px}
+.ic{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 8px;border:1px solid var(--line);border-radius:12px;text-align:center}
+.ic svg{width:40px;height:40px;color:var(--gold)}
+.ic span{font-size:.85rem}
+.ic small{font-size:.75rem;color:var(--muted);line-height:1.4}
+
+/* places */
+.places{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.place{border-radius:12px;overflow:hidden;background:var(--night-2);display:flex;flex-direction:column}
+.place .mood{height:70px}
+.place .body{padding:12px 14px;display:flex;flex-direction:column;gap:4px}
+.place p{color:var(--muted);font-size:.9rem;line-height:1.6}
+
+/* evidence cards */
+.ev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.ev{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:14px;padding:22px 26px;display:flex;flex-direction:column;justify-content:center;gap:12px;overflow:hidden}
+.ev.quran{background:radial-gradient(120% 120% at 50% 0%,#1D4A42 0%,#0E2229 70%);border:1px solid var(--line)}
+.ev.hadith{background:radial-gradient(120% 120% at 50% 0%,#3A3022 0%,#16201F 75%);border:1px solid rgba(201,164,92,.35)}
+.ev .kind{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--gold)}
+.ev .kind svg{width:20px;height:20px}
+.ev blockquote{margin:0;font-family:var(--f-quran);font-size:clamp(1.15rem,2.4vw,1.45rem);line-height:2;color:var(--sand);text-align:center}
+.ev .src{font-size:.8rem;color:var(--muted);text-align:center}
+.ev .corner{position:absolute;width:60px;height:60px;color:var(--gold);opacity:.35}
+.ev .c1{top:8px;right:8px}.ev .c2{bottom:8px;left:8px;transform:rotate(180deg)}
+
+/* structure timeline */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.steps li{display:grid;grid-template-columns:100px 1fr;gap:16px;padding-block:14px;border-bottom:1px solid var(--line)}
+.steps .t{font-family:ui-monospace,Menlo,monospace;direction:ltr;text-align:right;color:var(--gold);font-size:.85rem;font-variant-numeric:tabular-nums;padding-top:3px;white-space:nowrap}
+.steps b{font-family:var(--f-display);font-weight:500}
+.steps p{color:var(--muted);font-size:.93rem}
+
+/* script */
+.script{display:flex;flex-direction:column;gap:0;border-right:2px solid var(--line);padding-right:20px}
+.scene{padding-block:18px;display:flex;flex-direction:column;gap:8px;position:relative}
+.scene::before{content:"";position:absolute;right:-27px;top:26px;width:12px;height:12px;border-radius:50%;background:var(--night);border:2px solid var(--gold)}
+.scene .hd{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.scene .loc{font-size:.78rem;color:var(--night);background:var(--gold);padding:1px 10px;border-radius:999px}
+.scene .loc.sad{background:var(--clay);color:var(--sand)}
+.scene .loc.em{background:var(--emerald);color:var(--sand)}
+.scene .nar{max-width:65ch}
+.scene .say{font-family:var(--f-quran);font-size:1.15rem;color:var(--gold);max-width:65ch}
+.scene .dir{font-size:.85rem;color:var(--muted);max-width:65ch}
+.scene .ref{font-family:var(--f-quran);font-size:1.12rem;background:var(--night-2);border-radius:10px;padding:12px 16px;max-width:65ch}
+.scene .ref small{display:block;font-family:var(--f-body);font-size:.78rem;color:var(--muted)}
+.note{background:rgba(168,100,74,.14);border:1px solid rgba(168,100,74,.45);border-radius:12px;padding:14px 16px;font-size:.92rem;max-width:72ch}
+
+/* thumbnails */
+.thumbs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.thumb{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:12px;overflow:hidden;background:#0E2229}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.thumb .shade{position:absolute;inset:0;background:linear-gradient(270deg,rgba(14,34,41,.92) 0%,rgba(14,34,41,.55) 45%,rgba(14,34,41,0) 75%)}
+.thumb .shade.l{background:linear-gradient(90deg,rgba(14,34,41,.92) 0%,rgba(14,34,41,.5) 45%,rgba(14,34,41,0) 75%)}
+.thumb .txt{position:absolute;inset:0;padding:6% 7%;display:flex;flex-direction:column;justify-content:center;gap:6px;width:62%}
+.thumb .txt.l{right:auto;left:0}
+.thumb .big{font-family:var(--f-display);font-weight:700;font-size:clamp(1.4rem,4.4vw,2.2rem);line-height:1.25;color:var(--sand)}
+.thumb .big em{font-style:normal;color:var(--gold)}
+.thumb .small{font-size:clamp(.7rem,1.8vw,.9rem);color:var(--sand);opacity:.85}
+.thumb .mark{position:absolute;top:10px;left:10px;width:34px;height:34px}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 24px;margin-top:18px;font-size:.92rem;color:var(--muted)}
+.rules b{color:var(--sand);font-weight:500}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.gallery figure{margin:0;border-radius:12px;overflow:hidden;background:var(--night-2)}
+.gallery img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.gallery figcaption{padding:8px 12px;font-size:.82rem;color:var(--muted)}
+
+/* next episodes */
+.eps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.ep{border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.ep p{color:var(--muted);font-size:.9rem}
+.ep .r{font-family:var(--f-quran);color:var(--gold);font-size:1rem}
+
+footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);padding-top:18px}
+a{color:var(--gold)}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.4" d="M12 2l2.6 4.2 4.8-1.2-1.2 4.8L22 12l-4.2 2.6 1.2 4.8-4.8-1.2L12 22l-2.6-4.2-4.8 1.2 1.2-4.8L2 12l4.2-2.6-1.2-4.8 4.8 1.2z"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M30 6a18 18 0 1 0 12 30A15 15 0 0 1 30 6z"/><path fill="currentColor" d="M36 12l1.2 2.6 2.8.4-2 2 .5 2.8-2.5-1.3-2.5 1.3.5-2.8-2-2 2.8-.4z"/></symbol>
+    <symbol id="i-beads" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="24" cy="8" r="3"/><circle cx="34" cy="12" r="3"/><circle cx="39" cy="22" r="3"/><circle cx="36" cy="32" r="3"/><circle cx="14" cy="12" r="3"/><circle cx="9" cy="22" r="3"/><circle cx="12" cy="32" r="3"/><path stroke-linecap="round" d="M24 36v6M21 44h6"/><circle cx="24" cy="36" r="3"/></g></symbol>
+    <symbol id="i-book" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M24 12c-5-4-12-4-18-2v28c6-2 13-2 18 2 5-4 12-4 18-2V10c-6-2-13-2-18 2z"/><path d="M24 12v28"/><path d="M6 42l18 2 18-2" stroke-linecap="round"/></g></symbol>
+    <symbol id="i-bread" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 28c0-9 8-14 18-14s18 5 18 14c0 4-3 6-6 6H12c-3 0-6-2-6-6z"/><path d="M16 20l-3 6M24 18v7M32 20l3 6"/></g></symbol>
+    <symbol id="i-rain" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 26a8 8 0 0 1 1-16 11 11 0 0 1 20 3 7 7 0 0 1-1 13z"/><path d="M16 32l-2 5M24 32l-2 7M32 32l-2 5"/></g></symbol>
+    <symbol id="i-door" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M10 42V18a14 14 0 0 1 28 0v24z"/><path d="M18 42V22a6 6 0 0 1 12 0v20" opacity=".9"/><path d="M6 42h36" stroke-linecap="round"/><path d="M24 4v4" stroke-linecap="round"/></g></symbol>
+    <symbol id="i-hands" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 42V26l-6-12c-1-2-4-1-4 1l2 11-4-6c-1-2-4-1-3 1l5 12 4 9z"/><path d="M26 42V26l6-12c1-2 4-1 4 1l-2 11 4-6c1-2 4-1 3 1l-5 12-4 9z"/></g></symbol>
+    <symbol id="i-lantern" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M24 3v4"/><path d="M18 7h12l2 6H16z"/><path d="M16 13c-2 6-2 16 0 22h16c2-6 2-16 0-22"/><path d="M24 19c-2 3-2 6 0 9 2-3 2-6 0-9z" fill="currentColor"/><path d="M18 35l-1 5h14l-1-5"/></g></symbol>
+    <symbol id="i-mosque" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M14 42V28c0-6 10-8 10-16 0 8 10 10 10 16v14z"/><path d="M6 42V18l2-4 2 4v24M38 42V18l2-4 2 4v24"/><path d="M4 42h40" stroke-linecap="round"/><path d="M21 42v-7a3 3 0 0 1 6 0v7"/></g></symbol>
+    <symbol id="i-scroll" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 8h26v28a4 4 0 0 1-4 4H10"/><path d="M12 8a4 4 0 0 0-4 4v4h4M10 40a4 4 0 0 1-4-4v-4h22v4a4 4 0 0 0 4 4"/><path d="M18 16h14M18 22h14M18 28h8" stroke-linecap="round"/></g></symbol>
+    <symbol id="i-gift" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="8" y="18" width="32" height="8"/><path d="M11 26v16h26V26M24 18v24"/><path d="M24 18c-4-8-12-8-11-2 1 3 7 2 11 2zM24 18c4-8 12-8 11-2-1 3-7 2-11 2z"/></g></symbol>
+    <symbol id="i-corner" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.4"><path d="M58 2H30a28 28 0 0 0-28 28v28"/><path d="M58 10H32A22 22 0 0 0 10 32v26"/><path d="M50 2l-6 8M2 50l8-6"/><circle cx="46" cy="18" r="3"/></g></symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="brand">
+    <svg class="logo" viewBox="0 0 100 100" aria-label="شعار سكينة">
+      <circle cx="50" cy="50" r="47" fill="#15313A" stroke="#C9A45C" stroke-width="1.5"/>
+      <path d="M50 14l6.5 10.5 12-3-3 12L76 40l-10.5 6.5 3 12-12-3L50 66l-6.5-10.5-12 3 3-12L24 40l10.5-6.5-3-12 12 3z" fill="none" stroke="#C9A45C" stroke-width="1.2" opacity=".55" transform="translate(0 2)"/>
+      <path d="M58 26a20 20 0 1 0 14 32 17 17 0 0 1-14-32z" fill="#C9A45C"/>
+      <path d="M30 78h40" stroke="#2E6B5C" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <h1>سَكينة</h1>
+      <div class="tag">قصصٌ تُقرّبك من الله</div>
+    </div>
+  </div>
+  <div class="hero-art">
+    <img src="images/hero.jpg" alt="يوسف أمام مخبز العم صالح عند الفجر">
+    <span class="badge">صورة الغلاف — الحلقة الأولى</span>
+  </div>
+  <p class="lead">قناة تحكي قصصاً إنسانية هادئة، مستوحاة من قصص حقيقية، يعيشها بطل واحد اسمه <b>يوسف</b>. في كل حلقة يمرّ بضيق، ثم يكتشف معنى من القرآن أو حديث صحيح عن النبي ﷺ يغيّر طريقه: الاستغفار، الرزق، عطايا الله، الصبر، والتوكل.</p>
+</header>
+
+<!-- ============ PILLARS ============ -->
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">محاور المحتوى</span>
+    <h2>خمسة أبواب تدور حولها كل الحلقات</h2>
+  </div>
+  <div class="pillars">
+    <div class="pillar"><svg><use href="#i-beads"/></svg><h3>الاستغفار</h3><p>كيف يفتح الاستغفار الأبواب المغلقة، بقصص وأدلة.</p></div>
+    <div class="pillar"><svg><use href="#i-bread"/></svg><h3>الأرزاق</h3><p>الرزق أوسع من المال: صحة، أهل، طمأنينة، وصحبة صالحة.</p></div>
+    <div class="pillar"><svg><use href="#i-gift"/></svg><h3>عطايا الله</h3><p>نِعَم لا ننتبه لها، وكيف يزيدها الشكر.</p></div>
+    <div class="pillar"><svg><use href="#i-scroll"/></svg><h3>شرح الأحاديث</h3><p>حديث صحيح واحد في كل حلقة، يُشرح ببساطة ومثال من الحياة.</p></div>
+    <div class="pillar"><svg><use href="#i-door"/></svg><h3>المخرج بعد الضيق</h3><p>﴿ومن يتقِ الله يجعل له مخرجاً﴾ — خيط يربط كل القصص.</p></div>
+  </div>
+</section>
+
+<!-- ============ PALETTE ============ -->
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">الألوان</span>
+    <h2>لوحة ألوان الفجر: هادئة وغير مشبعة</h2>
+    <p>الألوان مأخوذة من لحظة ما قبل الفجر: سماء داكنة، نور مصباح نحاسي، وحجر رملي. لا ألوان صارخة ولا تدرجات نيون.</p>
+  </div>
+  <div class="palette">
+    <div class="sw"><div class="chip" style="background:#0E2229"></div><div class="meta"><b>ليل الفجر</b><code>#0E2229</code><small>الخلفية الأساسية للفيديو والصور المصغرة</small></div></div>
+    <div class="sw"><div class="chip" style="background:#2E6B5C"></div><div class="meta"><b>زمرّدي</b><code>#2E6B5C</code><small>بطاقات الآيات، المساجد، لحظات الطمأنينة</small></div></div>
+    <div class="sw"><div class="chip" style="background:#C9A45C"></div><div class="meta"><b>نحاسي ذهبي</b><code>#C9A45C</code><small>العناوين، الأيقونات، كلمة مفتاحية واحدة في الصورة</small></div></div>
+    <div class="sw"><div class="chip" style="background:#EFE4CF"></div><div class="meta"><b>رملي</b><code>#EFE4CF</code><small>النصوص والترجمة على الشاشة</small></div></div>
+    <div class="sw"><div class="chip" style="background:#A8644A"></div><div class="meta"><b>طيني</b><code>#A8644A</code><small>مشاهد الضيق والحزن فقط، بقلة</small></div></div>
+  </div>
+  <div class="ratio" aria-label="نسب استخدام الألوان">
+    <span style="flex:60;background:#0E2229;outline:1px solid var(--line)"></span>
+    <span style="flex:15;background:#2E6B5C"></span>
+    <span style="flex:12;background:#EFE4CF"></span>
+    <span style="flex:10;background:#C9A45C"></span>
+    <span style="flex:3;background:#A8644A"></span>
+  </div>
+  <p class="ratio-note">النسبة في كل إطار تقريباً: 60٪ ليل · 15٪ زمرّدي · 12٪ رملي · 10٪ ذهبي · 3٪ طيني.</p>
+</section>
+
+<!-- ============ TYPE ============ -->
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">الخطوط</span>
+    <h2>ثلاثة خطوط، لكل منها دور واحد</h2>
+  </div>
+  <div class="type-grid">
+    <div class="type-card"><small>العناوين والصور المصغرة — Reem Kufi</small><div class="sample" style="font-family:var(--f-display);font-weight:700">سرّ خبّاز الفجر</div></div>
+    <div class="type-card"><small>الآيات والأحاديث — Amiri</small><div class="sample" style="font-family:var(--f-quran)">فَقُلْتُ اسْتَغْفِرُوا رَبَّكُمْ</div></div>
+    <div class="type-card"><small>الشرح والترجمة على الشاشة — IBM Plex Sans Arabic</small><div class="sample" style="font-size:1.4rem">ستة أشهر بلا عمل…</div></div>
+  </div>
+</section>
+
+<!-- ============ CHARACTERS ============ -->
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">الشخصيات</span>
+    <h2>بطل ثابت يكبر مع المشاهد</h2>
+    <p>يوسف يظهر في كل الحلقات، فيتعلّق به المشاهد ويتابع تطوره. حوله شخصيات ثانوية تتكرر.</p>
+  </div>
+  <div class="chars">
+    <div class="char">
+      <h3>يوسف — البطل الرئيسي</h3>
+      <svg viewBox="0 0 110 150" aria-label="رسم يوسف">
+        <rect width="110" height="150" rx="10" fill="#0E2229"/>
+        <path d="M18 150c2-30 16-44 37-44s35 14 37 44z" fill="#4E5B3A"/>
+        <path d="M44 106l11 14 11-14" fill="#EFE4CF"/>
+        <rect x="48" y="88" width="14" height="18" fill="#C69A78"/>
+        <ellipse cx="55" cy="66" rx="20" ry="24" fill="#C69A78"/>
+        <path d="M35 62c0-18 10-26 20-26s21 8 21 26c-4-8-10-12-21-12s-16 4-20 12z" fill="#1E1A17"/>
+        <path d="M37 72c2 14 9 22 18 22s16-8 18-22c-3 6-8 8-18 8s-15-2-18-8z" fill="#1E1A17"/>
+        <circle cx="47" cy="66" r="2" fill="#1E1A17"/><circle cx="63" cy="66" r="2" fill="#1E1A17"/>
+      </svg>
+      <dl>
+        <dt>العمر</dt><dd>28 سنة</dd>
+        <dt>المهنة</dt><dd>محاسب فقد عمله</dd>
+        <dt>اللباس</dt><dd>جاكيت زيتوني وقميص رملي، ثابت في كل الحلقات</dd>
+        <dt>صفاته</dt><dd>طيب، قلق على أمه، يحب الأرقام، يتعلم ببطء ثم يثبت</dd>
+        <dt>رحلته</dt><dd>من القلق إلى السكينة، حلقة بعد حلقة</dd>
+      </dl>
+    </div>
+    <div class="char">
+      <h3>العم صالح — المرشد</h3>
+      <svg viewBox="0 0 110 150" aria-label="رسم العم صالح">
+        <rect width="110" height="150" rx="10" fill="#0E2229"/>
+        <path d="M16 150c2-30 16-44 39-44s37 14 39 44z" fill="#EFE4CF"/>
+        <path d="M30 120h50v30H30z" fill="#D8CBB1"/>
+        <rect x="48" y="88" width="14" height="18" fill="#B98C6A"/>
+        <ellipse cx="55" cy="66" rx="19" ry="23" fill="#B98C6A"/>
+        <path d="M34 54c2-12 10-18 21-18s19 6 21 18z" fill="#F4EFE6"/>
+        <path d="M37 70c1 18 8 30 18 30s17-12 18-30c-4 6-9 8-18 8s-14-2-18-8z" fill="#DCD6CC"/>
+        <path d="M46 64h4M60 64h4" stroke="#1E1A17" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <dl>
+        <dt>العمر</dt><dd>نحو 70 سنة</dd>
+        <dt>المهنة</dt><dd>خبّاز في زقاق قديم منذ 40 سنة</dd>
+        <dt>اللباس</dt><dd>طاقية بيضاء ومريلة رملية عليها أثر الطحين</dd>
+        <dt>صفاته</dt><dd>قليل الكلام، لسانه لا يتوقف عن الاستغفار، يجيب بقصة</dd>
+        <dt>دوره</dt><dd>يظهر عند الضيق ويفتح الباب لمعنى الحلقة</dd>
+      </dl>
+    </div>
+  </div>
+  <p style="color:var(--muted);margin-top:14px;font-size:.92rem">شخصيات ثانوية متكررة: <b style="color:var(--sand)">أم يوسف</b> (مريضة وصابرة، صوت الدعاء في البيت) · <b style="color:var(--sand)">مريم</b> أخته الصغرى (أسئلتها البسيطة تفتح الشرح) · <b style="color:var(--sand)">الأستاذ كريم</b> صاحب شركة توزيع (باب الرزق في الحلقة الأولى).</p>
+</section>
+
+<!-- ============ ICONS ============ -->
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">الأيقونات</span>
+    <h2>أيقونات بخط نحاسي رفيع</h2>
+    <p>تظهر بجانب العناوين داخل الفيديو، وفي بداية كل فصل، وفي الصور المصغرة بحجم صغير. خط واحد بسماكة ثابتة، بلا تعبئة ملوّنة.</p>
+  </div>
+  <div class="icons">
+    <div class="ic"><svg><use href="#i-beads"/></svg><span>مسبحة</span><small>فصل الاستغفار</small></div>
+    <div class="ic"><svg><use href="#i-book"/></svg><span>مصحف</span><small>بطاقة الآية</small></div>
+    <div class="ic"><svg><use href="#i-scroll"/></svg><span>مخطوطة</span><small>بطاقة الحديث</small></div>
+    <div class="ic"><svg><use href="#i-bread"/></svg><span>خبز</span><small>الرزق</small></div>
+    <div class="ic"><svg><use href="#i-rain"/></svg><span>غيث</span><small>﴿يرسل السماء عليكم مدراراً﴾</small></div>
+    <div class="ic"><svg><use href="#i-door"/></svg><span>باب</span><small>المخرج والفرج</small></div>
+    <div class="ic"><svg><use href="#i-hands"/></svg><span>يدان</span><small>الدعاء</small></div>
+    <div class="ic"><svg><use href="#i-moon"/></svg><span>هلال</span><small>مشاهد الليل</small></div>
+    <div class="ic"><svg><use href="#i-lantern"/></svg><span>فانوس</span><small>الأمل</small></div>
+    <div class="ic"><svg><use href="#i-mosque"/></svg><span>مسجد</span><small>الفجر والصلاة</small></div>
+    <div class="ic"><svg><use href="#i-gift"/></svg><span>عطية</span><small>عطايا الله</small></div>
+  </div>
+</section>
+
+<!-- ============ PLACES ============ -->
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">الأماكن</span>
+    <h2>أماكن متنوعة، لكل منها لون ومزاج</h2>
+    <p>تنوّع المكان يمنع الملل. كل مكان يرتبط بمرحلة من مراحل القصة.</p>
+  </div>
+  <div class="places">
+    <div class="place"><div class="mood" style="background:linear-gradient(90deg,#3B2A1C,#C9A45C)"></div><div class="body"><h3>مخبز الزقاق عند الفجر</h3><p>نور الفرن، الطحين، صوت الاستغفار. مكان المرشد.</p></div></div>
+    <div class="place"><div class="mood" style="background:linear-gradient(90deg,#0B1A20,#2B4652)"></div><div class="body"><h3>سطح البيت ليلاً</h3><p>هلال، خزانات ماء، مئذنة بعيدة. لحظات المناجاة.</p></div></div>
+    <div class="place"><div class="mood" style="background:linear-gradient(90deg,#2A2523,#6E5246)"></div><div class="body"><h3>شقة يوسف</h3><p>إضاءة خافتة، فواتير على الطاولة، غرفة الأم. مشاهد الضيق.</p></div></div>
+    <div class="place"><div class="mood" style="background:linear-gradient(90deg,#163B35,#2E6B5C)"></div><div class="body"><h3>المسجد القديم</h3><p>أعمدة، سجاد أخضر، ضوء نافذة. مشاهد الطمأنينة.</p></div></div>
+    <div class="place"><div class="mood" style="background:linear-gradient(90deg,#5A4632,#D1B887)"></div><div class="body"><h3>السوق القديم نهاراً</h3><p>توابل، أقمشة، زحام. مشاهد الرزق والناس.</p></div></div>
+    <div class="place"><div class="mood" style="background:linear-gradient(90deg,#1B262C,#566872)"></div><div class="body"><h3>مكتب حديث</h3><p>زجاج وألوان باردة. مقابلات العمل والرفض.</p></div></div>
+    <div class="place"><div class="mood" style="background:linear-gradient(90deg,#3E2F1F,#8A6B43)"></div><div class="body"><h3>بغداد القديمة (استرجاع)</h3><p>بلون سيبيا ذهبي، للقصص التراثية التي يحكيها العم صالح.</p></div></div>
+    <div class="place"><div class="mood" style="background:linear-gradient(90deg,#24363A,#7E9A98)"></div><div class="body"><h3>شارع تحت المطر</h3><p>انعكاس الأضواء على الأرض. نقطة التحول في القصة.</p></div></div>
+  </div>
+</section>
+
+<!-- ============ EVIDENCE CARDS ============ -->
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">بطاقات الأدلة</span>
+    <h2>كيف تظهر الآية والحديث على الشاشة</h2>
+    <p>تتوقف القصة، يهدأ الصوت، وتظهر البطاقة 6 إلى 8 ثوانٍ. الآية دائماً بخلفية زمرّدية، والحديث بخلفية بنية دافئة، فيعرف المشاهد الفرق من اللون. ويُذكر المصدر دائماً.</p>
+  </div>
+  <div class="ev-grid">
+    <div class="ev quran">
+      <svg class="corner c1"><use href="#i-corner"/></svg><svg class="corner c2"><use href="#i-corner"/></svg>
+      <div class="kind"><svg><use href="#i-book"/></svg>من القرآن الكريم</div>
+      <blockquote>﴿فَقُلْتُ اسْتَغْفِرُوا رَبَّكُمْ إِنَّهُ كَانَ غَفَّارًا ۝ يُرْسِلِ السَّمَاءَ عَلَيْكُم مِّدْرَارًا ۝ وَيُمْدِدْكُم بِأَمْوَالٍ وَبَنِينَ﴾</blockquote>
+      <div class="src">سورة نوح — الآيات 10 إلى 12</div>
+    </div>
+    <div class="ev hadith">
+      <svg class="corner c1"><use href="#i-corner"/></svg><svg class="corner c2"><use href="#i-corner"/></svg>
+      <div class="kind"><svg><use href="#i-scroll"/></svg>من حديث النبي ﷺ</div>
+      <blockquote>«لو أنكم تتوكلون على الله حقَّ توكله، لرزقكم كما يرزق الطير، تغدو خِماصاً وتروح بِطاناً»</blockquote>
+      <div class="src">رواه الترمذي (2344) وقال: حسن صحيح</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STRUCTURE ============ -->
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">طريقة الشرح</span>
+    <h2>هيكل ثابت لكل حلقة (8 إلى 12 دقيقة)</h2>
+    <p>نفس الترتيب في كل حلقة، فيعتاد المشاهد عليه ويبقى حتى النهاية.</p>
+  </div>
+  <ol class="steps">
+    <li><span class="t">0:00–0:30</span><div><b>الخطّاف</b><p>أصعب لحظة في القصة أولاً، وسؤال يشدّ المشاهد: «ماذا تفعل حين تُغلق كل الأبواب؟»</p></div></li>
+    <li><span class="t">0:30–0:45</span><div><b>الشارة</b><p>شعار سكينة يظهر مع صوت ريح خفيفة وأذان بعيد. لا تتجاوز 10 ثوانٍ.</p></div></li>
+    <li><span class="t">0:45–4:00</span><div><b>الضيق</b><p>نعيش مع يوسف مشكلته في أماكن متنوعة. ألوان أبرد، والطيني يظهر هنا.</p></div></li>
+    <li><span class="t">4:00–6:30</span><div><b>اللقاء والمعنى</b><p>المرشد أو موقف يفتح الباب. هنا تظهر بطاقة الآية ثم بطاقة الحديث، مع شرح بسيط بمثال من الحياة.</p></div></li>
+    <li><span class="t">6:30–9:00</span><div><b>التطبيق والتحوّل</b><p>يوسف يطبّق. مونتاج أيام، ثم الفرج من حيث لا يحتسب. الألوان تدفأ تدريجياً.</p></div></li>
+    <li><span class="t">9:00–10:00</span><div><b>الخلاصة والتحدي</b><p>ثلاث نقاط على الشاشة، وتحدٍّ عملي للمشاهد لمدة أسبوع.</p></div></li>
+    <li><span class="t">10:00–10:30</span><div><b>الدعاء والختام</b><p>دعاء قصير، ثم لقطة تمهّد للحلقة القادمة.</p></div></li>
+  </ol>
+</section>
+
+<!-- ============ EPISODE 1 ============ -->
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">الحلقة الأولى — السيناريو</span>
+    <h2>سرّ خبّاز الفجر</h2>
+    <p>مستوحاة من القصة المشهورة عن الإمام أحمد بن حنبل والخبّاز الذي كان لا يتوقف عن الاستغفار، مع نقلها إلى زماننا وإضافة شخصية يوسف وأحداث جديدة.</p>
+  </div>
+
+  <div class="script">
+    <div class="scene">
+      <div class="hd"><span class="loc sad">مكتب حديث · نهار</span><h3>الخطّاف</h3></div>
+      <p class="dir">لقطة قريبة: يد يوسف تمسك ملفاً. باب زجاجي يُغلق أمامه. ثم بابان آخران بمونتاج سريع.</p>
+      <p class="nar">الراوي: «ستة أشهر بلا عمل… وثلاثة أبواب أُغلقت في وجهه في يوم واحد. لم يكن يعلم أن الباب الذي سيُفتح له، بابُ مخبزٍ صغير… قبل الفجر.»</p>
+    </div>
+    <div class="scene">
+      <div class="hd"><span class="loc sad">شقة يوسف · ليل</span><h3>الضيق</h3></div>
+      <p class="dir">فواتير على الطاولة، رسالة على الهاتف: «نعتذر، تم اختيار مرشح آخر». صوت سعال أمه من الغرفة المجاورة.</p>
+      <p class="nar">الأم بصوت ضعيف: «يا يوسف… الرزق مكتوب يا ولدي، لكن الباب يحتاج من يطرقه.»</p>
+      <p class="nar">يوسف يبتسم لها، ثم يخرج إلى الشارع ليمشي، لا يستطيع النوم.</p>
+    </div>
+    <div class="scene">
+      <div class="hd"><span class="loc">شارع تحت المطر ← مخبز الزقاق · قبل الفجر</span><h3>اللقاء</h3></div>
+      <p class="dir">يبدأ المطر. كل المحلات مغلقة، إلا نوراً دافئاً في آخر الزقاق. يقف يوسف تحت مظلة المخبز. العم صالح يعجن، ولسانه يتحرك.</p>
+      <p class="say">العم صالح: «أستغفر الله… أستغفر الله… ادخل يا ابني، المطر لا يرحم.»</p>
+      <p class="nar">يوسف يجلس قرب الفرن. يلاحظ أن الشيخ لا يتوقف عن الاستغفار وهو يعمل. يسأله: «يا عم، لماذا لا تتوقف؟»</p>
+      <p class="say">العم صالح: «منذ أربعين سنة يا ابني… ما دعوت الله بدعوة إلا رأيتها.»</p>
+    </div>
+    <div class="scene">
+      <div class="hd"><span class="loc">بغداد القديمة · استرجاع بلون سيبيا</span><h3>القصة داخل القصة</h3></div>
+      <p class="dir">انتقال بالرسم إلى لوحات ذهبية متحركة: عالم مسافر ليلاً، لا يعرفه أحد، يمنعه حارس المسجد من المبيت، فيستضيفه خبّاز.</p>
+      <p class="nar">العم صالح يحكي: «يُروى أن الإمام أحمد بن حنبل نزل ليلةً عند خبّاز لا يعرفه، فرآه يستغفر طوال عمله. سأله: هل رأيت لهذا أثراً؟ قال الخبّاز: ما دعوت دعوة إلا أُجيبت، إلا واحدة. قال: وما هي؟ قال: أن أرى الإمام أحمد. فقال له: أنا أحمد بن حنبل… واللهِ لقد جُررت إليك جرّاً.»</p>
+    </div>
+    <div class="scene">
+      <div class="hd"><span class="loc em">بطاقة الآية</span><h3>الدليل من القرآن</h3></div>
+      <div class="ref">﴿فَقُلْتُ اسْتَغْفِرُوا رَبَّكُمْ إِنَّهُ كَانَ غَفَّارًا ۝ يُرْسِلِ السَّمَاءَ عَلَيْكُم مِّدْرَارًا ۝ وَيُمْدِدْكُم بِأَمْوَالٍ وَبَنِينَ وَيَجْعَل لَّكُمْ جَنَّاتٍ وَيَجْعَل لَّكُمْ أَنْهَارًا﴾<small>سورة نوح: 10–12</small></div>
+      <p class="nar">الشرح: نوح عليه السلام ربط الاستغفار بالمطر والمال والأولاد. الاستغفار ليس كلمة للمذنبين فقط، بل مفتاح للرزق والفرج.</p>
+    </div>
+    <div class="scene">
+      <div class="hd"><span class="loc em">بطاقة الحديث</span><h3>الدليل من السنة</h3></div>
+      <div class="ref">«واللهِ إني لأستغفر الله وأتوب إليه في اليوم أكثر من سبعين مرة»<small>رواه البخاري (6307)</small></div>
+      <p class="nar">الشرح: إذا كان النبي ﷺ، وهو المغفور له، يستغفر أكثر من سبعين مرة في اليوم، فنحن أحوج. ويعلّم العم صالح يوسف «سيد الاستغفار» من صحيح البخاري.</p>
+    </div>
+    <div class="scene">
+      <div class="hd"><span class="loc em">المسجد · الفجر ← السطح · الليل</span><h3>التطبيق</h3></div>
+      <p class="dir">مونتاج أيام مع عدّاد صغير على الشاشة: «اليوم 1… اليوم 7… اليوم 15». يوسف يصلي الفجر، يستغفر في الطريق، ويستمر في التقديم على الوظائف. لا يجلس منتظراً.</p>
+      <p class="nar">الراوي: «لم يترك الأسباب. كان يطرق الأبواب نهاراً… ويطرق باب السماء ليلاً.»</p>
+    </div>
+    <div class="scene">
+      <div class="hd"><span class="loc">مخبز الزقاق · نهار</span><h3>التحوّل — من حيث لا يحتسب</h3></div>
+      <p class="dir">اليوم 23: المخبز مغلق. العم صالح مريض. يوسف يزوره ويعرض أن يفتح المخبز مكانه أسبوعاً.</p>
+      <p class="nar">يوسف يكتشف أن دفاتر المخبز فوضى. ينظّمها بخبرته في المحاسبة ويكشف أن مورّد الطحين يأخذ ضعف السعر. يتصل بالأستاذ كريم صاحب شركة التوزيع ليصحح الحساب.</p>
+      <p class="nar">الأستاذ كريم يرى الدفاتر ويقول: «من نظّم هذا؟ أبحث عن محاسب أمين منذ شهور.»</p>
+      <div class="ref">﴿وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا ۝ وَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ﴾<small>سورة الطلاق: 2–3</small></div>
+    </div>
+    <div class="scene">
+      <div class="hd"><span class="loc">مخبز الزقاق · فجر بعد شهر</span><h3>الختام</h3></div>
+      <p class="dir">يوسف بقميص عمل جديد يمرّ بالمخبز. العم صالح عاد يعجن. ينظر إليه ويبتسم.</p>
+      <p class="say">العم صالح: «ألم أقل لك يا ابني؟ أستغفر الله…»</p>
+      <p class="say">يوسف يكمل معه: «…وأتوب إليه.»</p>
+    </div>
+    <div class="scene">
+      <div class="hd"><span class="loc em">شاشة الخلاصة</span><h3>الخلاصة والتحدي</h3></div>
+      <p class="nar">1. الاستغفار مفتاح للرزق والفرج (سورة نوح). 2. الاستغفار مع الأخذ بالأسباب، لا بدلاً منها. 3. الرزق قد يأتي من باب لم تتوقعه.</p>
+      <p class="nar">التحدي: استغفر الله 100 مرة كل يوم لمدة 7 أيام، كما في حديث مسلم (2702): «إنه ليُغان على قلبي، وإني لأستغفر الله في اليوم مائة مرة». واكتب في التعليقات ماذا تغيّر.</p>
+    </div>
+  </div>
+
+  <p class="note" style="margin-top:20px"><b>تنبيه مهم للأمانة العلمية:</b> قصة الإمام أحمد والخبّاز متداولة كثيراً، لكن لا يُعرف لها إسناد ثابت في كتب التراجم. لذلك يقولها العم صالح بصيغة «يُروى»، وتُعرض للاستئناس فقط. أما الدليل فيكون دائماً من القرآن والأحاديث الصحيحة المذكورة بمصادرها. اكتب هذا التنبيه في وصف الفيديو أيضاً.</p>
+</section>
+
+<!-- ============ THUMBNAILS ============ -->
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">الصور المصغرة</span>
+    <h2>صورة مصغرة بعنوان قصير وكلمة ذهبية واحدة</h2>
+  </div>
+  <div class="thumbs">
+    <div class="thumb">
+      <img src="images/hero.jpg" alt="">
+      <div class="shade"></div>
+      <div class="txt"><div class="big">سرّ خبّاز<br><em>الفجر</em></div><div class="small">دعوة واحدة غيّرت حياته</div></div>
+      <svg class="mark" viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="#0E2229" stroke="#C9A45C" stroke-width="3"/><path d="M58 26a20 20 0 1 0 14 32 17 17 0 0 1-14-32z" fill="#C9A45C"/></svg>
+    </div>
+    <div class="thumb">
+      <img src="images/night.jpg" alt="">
+      <div class="shade l"></div>
+      <div class="txt l"><div class="big">أغلقوا كل<br>الأبواب… <em>إلا واحداً</em></div><div class="small">قصة مستوحاة من قصة حقيقية</div></div>
+      <svg class="mark" style="left:auto;right:10px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="#0E2229" stroke="#C9A45C" stroke-width="3"/><path d="M58 26a20 20 0 1 0 14 32 17 17 0 0 1-14-32z" fill="#C9A45C"/></svg>
+    </div>
+  </div>
+  <div class="rules">
+    <div><b>العنوان:</b> 3 إلى 5 كلمات فقط، بخط Reem Kufi عريض.</div>
+    <div><b>الذهبي:</b> كلمة واحدة فقط تحمل اللون الذهبي.</div>
+    <div><b>البطل:</b> يوسف دائماً في الصورة، بنظرة واضحة.</div>
+    <div><b>الشعار:</b> الهلال في زاوية ثابتة كتوقيع للقناة.</div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">صور الستايل</span>
+    <h2>نماذج للرسم المعتمد في الحلقات</h2>
+    <p>رسم ثنائي الأبعاد بأسلوب لوحات سينمائية، ألوان هادئة، ضوء دافئ. يمكن تحريكها بحركة كاميرا بطيئة (بارالاكس).</p>
+  </div>
+  <div class="gallery" id="gallery"></div>
+</section>
+
+<!-- ============ NEXT EPISODES ============ -->
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">الحلقات القادمة</span>
+    <h2>أفكار لأول خمس حلقات بعد الافتتاح</h2>
+  </div>
+  <div class="eps">
+    <div class="ep"><h3>الحلقة 2: الطير الذي لا يخزّن</h3><p>يوسف يخاف أن يفقد عمله الجديد. مريم تطعم الحمام على السطح.</p><span class="r">حديث الطير — الترمذي</span></div>
+    <div class="ep"><h3>الحلقة 3: لئن شكرتم</h3><p>يوسف يكتب كل ليلة ثلاث نِعم. تتغير نظرته لبيته الصغير.</p><span class="r">﴿لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ﴾ — إبراهيم 7</span></div>
+    <div class="ep"><h3>الحلقة 4: صدقة السرّ</h3><p>يوسف يرى جاراً محتاجاً ويتصدّق دون أن يعلم أحد.</p><span class="r">«ما نقصت صدقة من مال» — مسلم</span></div>
+    <div class="ep"><h3>الحلقة 5: دعاء الأم</h3><p>مرض الأم يشتد، ويوسف يتعلّم أن البِرّ باب من أبواب الرزق.</p><span class="r">«من سرّه أن يُبسط له في رزقه… فليصل رحمه» — البخاري ومسلم</span></div>
+    <div class="ep"><h3>الحلقة 6: الذي ضاقت به الأرض</h3><p>قصة كعب بن مالك يحكيها العم صالح، ويوسف يمر بظلم في العمل.</p><span class="r">سورة التوبة 118 — صحيح البخاري</span></div>
+  </div>
+</section>
+
+<footer>
+  <p>للصوت: راوٍ رجالي هادئ وعميق، بلا موسيقى صاخبة. يكفي صوت المطر والفرن والأذان البعيد وهمهمة صوتية خفيفة. للتحريك: صور ثابتة بأسلوب الصور أعلاه مع حركة كاميرا بطيئة وترجمة رملية أسفل الشاشة.</p>
+</footer>
+
+</div>
+
+<script>
+// Gallery images are published next to the page; missing ones are skipped quietly.
+(function(){
+  var items = [
+    ["images/hero.jpg","يوسف أمام مخبز العم صالح — الفجر"],
+    ["images/hero-2.jpg","زاوية أخرى للمخبز"],
+    ["images/night.jpg","يوسف على السطح ليلاً — لحظة الاستغفار"],
+    ["images/night-2.jpg","السطح والمدينة تحت الهلال"]
+  ];
+  var g = document.getElementById("gallery");
+  items.forEach(function(it){
+    var f = document.createElement("figure");
+    var img = new Image(); img.src = it[0]; img.alt = it[1];
+    img.onerror = function(){ f.remove(); };
+    var c = document.createElement("figcaption"); c.textContent = it[1];
+    f.appendChild(img); f.appendChild(c); g.appendChild(f);
+  });
+})();
+</script>
