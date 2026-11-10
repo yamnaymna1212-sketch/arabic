@@ -7,3 +7,4 @@ dist
 out/raw-*.mp4
 out/audio.m4a
 x265_2pass.log*
+money-trail-video/out/raw-neon.mp4
