@@ -5,3 +5,5 @@ dist
 
 # Ignore the output video from Git but not videos you import into src/.
 out/raw-*.mp4
+out/audio.m4a
+x265_2pass.log*
