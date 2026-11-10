@@ -1,7 +1,7 @@
 import React from "react";
 import { Audio } from "@remotion/media";
 import { AbsoluteFill, Sequence, interpolate, staticFile } from "remotion";
-import { C, Captions, FilmLook, FPS, Letterbox, Move, Plate, Stamp, W, WE, WORDS, useT } from "./lib";
+import { C, Captions, Clip, FilmLook, FPS, Letterbox, Move, Plate, Stamp, W, WE, WORDS, useT } from "./lib";
 import {
   Account,
   BigWords,
@@ -32,7 +32,7 @@ import {
 const VO_END = WE(WORDS.length - 1);
 export const EP1_SECONDS = VO_END + 4;
 
-type Shot = { at: number; src: string; move: Move; fx?: number; fy?: number; blur?: number; dark?: number };
+type Shot = { at: number; src: string; move: Move; fx?: number; fy?: number; blur?: number; dark?: number; vid?: string; rate?: number };
 const sh = (at: number, src: string, move: Move, extra: Partial<Shot> = {}): Shot => ({ at, src, move, ...extra });
 const S = (n: string) => `scenes/${n}.png`;
 
@@ -42,13 +42,13 @@ const recapShots: Shot[] = RECAP.map((n, i) =>
   sh(W(1153) + i * ((W(1245) - W(1153)) / RECAP.length), S(n), i % 2 ? "left" : "in", { dark: 0.6, blur: 3 }),
 );
 
-const SHOTS: Shot[] = [
-  sh(0, S("s01"), "in", { fx: 45, fy: 40 }),
+const RAW_SHOTS: Shot[] = [
+  sh(0, S("s01"), "in", { fx: 45, fy: 40, vid: "s01" }),
   sh(W(17), S("s02"), "in", { fx: 60 }),
   sh(W(28), S("s04"), "in", { dark: 0.35 }),
   sh(W(33), S("s13"), "in"),
   sh(W(44), S("s01"), "out", { blur: 6, dark: 0.55 }),
-  sh(W(68), S("s05"), "in", { fx: 70, fy: 35 }),
+  sh(W(68), S("s05"), "in", { fx: 70, fy: 35, vid: "s05" }),
   sh(W(111), S("s06"), "in", { fx: 30 }),
   sh(W(118), S("s06"), "out", { blur: 5, dark: 0.5 }),
   sh(W(130), S("s07"), "in", { fx: 70 }),
@@ -57,34 +57,48 @@ const SHOTS: Shot[] = [
   sh(W(281), S("s10"), "in", { fx: 75, fy: 70 }),
   sh(W(311), S("s11"), "left"),
   sh(W(329), S("s01"), "in", { dark: 0.2 }),
-  sh(W(343), S("s02"), "in", { fx: 55 }),
-  sh(W(409), S("s13"), "in", { fx: 35 }),
+  sh(W(343), S("s02"), "in", { fx: 55, vid: "s02" }),
+  sh(W(409), S("s13"), "in", { fx: 35, vid: "s13" }),
   sh(W(424), S("s14"), "right", { fx: 40 }),
   sh(W(514), S("s15"), "in", { fx: 55 }),
   sh(W(559), S("s16"), "in", { fx: 40 }),
   sh(W(600), S("s16"), "out", { blur: 6, dark: 0.55 }),
-  sh(W(652), S("s17"), "in", { fx: 45, fy: 55 }),
+  sh(W(652), S("s17"), "in", { fx: 45, fy: 55, vid: "s17" }),
   sh(W(715), S("s18"), "in", { fx: 25 }),
   sh(W(761), S("s07"), "out", { blur: 6, dark: 0.55 }),
-  sh(W(792), S("s19"), "in", { fx: 40 }),
-  sh(W(804), S("s20"), "up"),
+  sh(W(792), S("s19"), "in", { fx: 40, vid: "s19" }),
+  sh(W(804), S("s20"), "up", { vid: "s20" }),
   sh(W(833), S("s21"), "in", { fy: 55 }),
-  sh(W(874), S("s22"), "in", { fx: 45 }),
+  sh(W(874), S("s22"), "in", { fx: 45, vid: "s22" }),
   sh(W(904), S("s04"), "in", { dark: 0.2 }),
   sh(W(940), S("s20"), "in", { dark: 0.15 }),
   sh(W(982), S("s11"), "right"),
   sh(W(997), S("s23"), "in", { fx: 50, fy: 55 }),
   sh(W(1026), S("s23"), "out", { blur: 6, dark: 0.55 }),
   sh(W(1035), S("s05"), "out", { fx: 70, fy: 35, dark: 0.1 }),
-  sh(W(1054), S("s24"), "in", { fx: 50, fy: 35 }),
+  sh(W(1054), S("s24"), "in", { fx: 50, fy: 35, vid: "s24" }),
   sh(W(1113), S("s25"), "in", { fx: 35 }),
   ...recapShots,
   sh(W(1245), S("s26"), "in", { fx: 35 }),
-  sh(W(1333), S("s27"), "in", { fx: 40, dark: 0.15 }),
+  sh(W(1333), S("s27"), "in", { fx: 40, dark: 0.15, vid: "s27" }),
   sh(W(1377), S("s27"), "out", { blur: 8, dark: 0.6 }),
 ];
 
 const XF = 0.5; // crossfade seconds
+
+// Animated shots: each 5 s clip is slowed down (max 0.7x) to fill its shot.
+// If the shot is longer than the clip, we cross-fade to the clip's last frame.
+const CLIP = 5;
+const SHOTS: Shot[] = RAW_SHOTS.flatMap((s, i) => {
+  if (!s.vid) return [s];
+  const next = i + 1 < RAW_SHOTS.length ? RAW_SHOTS[i + 1].at : EP1_SECONDS + 1;
+  const len = next - s.at;
+  const d = Math.min(len + XF, CLIP / 0.7);
+  const rate = Math.min(1, CLIP / d);
+  const out: Shot[] = [{ ...s, rate }];
+  if (len > d + 0.3) out.push({ ...s, vid: undefined, at: s.at + d - XF, src: `clips/${s.vid}-last.png`, move: "in" });
+  return out;
+});
 
 const Plates: React.FC = () => {
   const t = useT();
@@ -97,7 +111,11 @@ const Plates: React.FC = () => {
         const o = i === 0 ? 1 : (t - (s.at - XF)) / XF;
         return (
           <AbsoluteFill key={i} style={{ opacity: Math.max(0, Math.min(1, o)) }}>
-            <Plate src={s.src} t0={s.at - XF} t1={end + XF} move={s.move} focusX={s.fx} focusY={s.fy} blur={s.blur} dark={s.dark} />
+            {s.vid ? (
+              <Clip src={`clips/${s.vid}.mp4`} from={s.at - XF} rate={s.rate ?? 1} dark={s.dark} />
+            ) : (
+              <Plate src={s.src} t0={s.at - XF} t1={end + XF} move={s.move} focusX={s.fx} focusY={s.fy} blur={s.blur} dark={s.dark} />
+            )}
           </AbsoluteFill>
         );
       })}

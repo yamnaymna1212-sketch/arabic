@@ -19,8 +19,8 @@ export const Banner: React.FC = () => (
       <LogoMark size={260} />
       <div>
         <div style={{ fontFamily: DISPLAY, fontSize: 170, color: C.paper, letterSpacing: 6, lineHeight: 0.9 }}>THE MONEY TRAIL</div>
-        <div style={{ fontFamily: BODY, fontWeight: 600, fontSize: 44, color: C.gold, letterSpacing: 3, marginTop: 10 }}>
-          WHAT HAPPENS IF… · FOLLOW THE MONEY TO THE END
+        <div style={{ fontFamily: BODY, fontWeight: 600, fontSize: 40, color: C.gold, letterSpacing: 3, marginTop: 10, whiteSpace: "nowrap" }}>
+          FOLLOW THE MONEY. ALL THE WAY TO THE END.
         </div>
       </div>
     </div>

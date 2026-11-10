@@ -110,6 +110,10 @@ stubble, olive work jacket over grey hoodie)…"*.
 3. Word timings: transcribe each part with `eleven_scribe_v1`, merge into
    `money-trail-video/src/words.json` (0.6 s gap between parts).
 4. New scene plates as needed (reuse the library first) → `money-trail-video/public/scenes/`.
+4b. Animate 8–10 key shots (hook, the big event, endings) with **Kling 2.6 Pro**
+   image-to-video, 5 s, no audio (~2,120 credits ≈ $0.39 per shot). Put them in
+   `money-trail-video/public/clips/sXX.mp4` (+ `sXX-last.png`, the last frame) and
+   add `vid: "sXX"` to that shot in `Episode.tsx`. The rest stay stills with camera moves.
 5. Edit the shot list and overlays in `money-trail-video/src/Episode.tsx`
    (everything is timed with `W(wordIndex)`).
 6. Render and master (see `money-trail-video/README.md`).

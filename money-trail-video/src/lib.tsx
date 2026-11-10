@@ -4,6 +4,8 @@ import {
   Easing,
   Img,
   interpolate,
+  OffthreadVideo,
+  Sequence,
   random,
   staticFile,
   useCurrentFrame,
@@ -97,6 +99,26 @@ export const Plate: React.FC<{
     </AbsoluteFill>
   );
 };
+
+/** An AI-animated clip, slowed to fit its shot. */
+export const Clip: React.FC<{ src: string; from: number; rate: number; dark?: number }> = ({ src, from, rate, dark = 0 }) => (
+  <AbsoluteFill style={{ backgroundColor: C.ink }}>
+    <Sequence from={Math.round(from * FPS)} layout="none">
+      <OffthreadVideo
+        src={staticFile(src)}
+        muted
+        playbackRate={rate}
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          transform: "scale(1.04)",
+          filter: `saturate(1.05) contrast(1.06) brightness(${1 - dark})`,
+        }}
+      />
+    </Sequence>
+  </AbsoluteFill>
+);
 
 /** Film look: grain, vignette, gentle exposure flicker. */
 export const FilmLook: React.FC = () => {
