@@ -1,0 +1,151 @@
+   0.60 [0] What happens if you just stop paying your car loan?
+   3.64 [10] No call.
+   4.60 [12] No warning.
+   5.64 [14] You just...
+   6.68 [16] stop.
+   7.56 [17] Do they come for it in the middle of the night?
+   9.88 [28] Can the police get involved?
+  11.64 [33] And once the car is gone, is the debt gone too?
+  14.84 [44] Today, we're following one missed car payment all the way to the end.
+  19.24 [57] Step by step.
+  20.40 [60] So you know exactly what happens, and when.
+  23.88 [68] Meet Tyler.
+  25.20 [70] Tyler is twenty-seven, lives in Columbus, Ohio, and just drove off the lot in a used pickup truck.
+  31.28 [88] He financed twenty-two thousand dollars over six years.
+  35.04 [96] His payment is four hundred and fifty dollars a month.
+  38.12 [106] For a while, everything's fine.
+  40.48 [111] Then his hours at work get cut.
+  42.84 [118] Rent is due.
+  43.96 [121] The truck payment is due.
+  45.56 [126] And Tyler picks rent.
+  47.64 [130] Day one.
+  48.96 [132] Honestly?
+  49.72 [133] Not much happens.
+  51.00 [136] Most auto loans have a short grace period, often around ten to fifteen days.
+  55.72 [150] After that, Tyler gets hit with a late fee, usually somewhere between twenty-five and fifty dollars, or a percentage of the payment.
+  63.16 [172] He gets an email.
+  64.36 [176] A text.
+  65.32 [178] Maybe an automated call.
+  66.92 [182] If he pays now, this mostly goes away.
+  69.88 [190] But Tyler doesn't pay.
+  71.96 [194] Day thirty.
+  73.16 [196] This is the first big moment.
+  75.48 [202] Once a payment is thirty days late, the lender can report it to the three credit bureaus: Equifax, Experian, and TransUnion.
+  83.40 [223] One late mark can drop a good credit score by dozens of points.
+  87.24 [236] For someone with excellent credit, it can be over a hundred.
+  90.64 [247] And there's something in Tyler's loan contract he never read.
+  93.96 [257] In many contracts, missing even one payment can put the loan in default.
+  98.52 [270] And default is the word that unlocks everything that comes next.
+ 102.68 [281] Day sixty.
+ 103.96 [283] A second missed payment.
+ 105.88 [287] Another late fee.
+ 107.32 [290] Another mark on his report.
+ 109.00 [295] Now the calls from the lender's collections team come every single day.
+ 113.08 [307] Tyler stops picking up.
+ 114.87 [311] He starts parking the truck around the corner, figuring out of sight means out of mind.
+ 119.83 [327] It doesn't.
+ 121.15 [329] Somewhere between day sixty and day ninety, for a lot of borrowers, it happens.
+ 127.07 [343] Three twelve in the morning.
+ 129.07 [348] A tow truck rolls into Tyler's apartment parking lot.
+ 132.51 [357] No knock.
+ 133.39 [359] No court date.
+ 134.51 [362] No police.
+ 135.79 [364] In most states, a lender can repossess a car without going to court first, as soon as the loan is in default.
+ 142.79 [386] Many lenders wait longer, but legally, they often don't have to.
+ 147.07 [397] They hire a repo company, and the repo company just takes it.
+ 151.35 [409] Tyler walks outside the next morning with his coffee...
+ 154.51 [418] and the parking spot is empty.
+ 157.15 [424] But here's something most people don't know.
+ 159.47 [431] Repo agents have rules too.
+ 161.79 [436] In most states, they can take a car from a driveway, a street, or a parking lot, but they can't breach the peace.
+ 168.95 [459] That generally means no breaking into a locked garage, no threats, no force.
+ 174.43 [472] In many states, if you're standing right there and clearly tell them no, they're supposed to stop and leave.
+ 180.83 [491] They can't pretend to be police.
+ 182.99 [497] And if officers do show up, they're there to keep the peace, not to collect a debt.
+ 188.27 [514] And what about Tyler's stuff?
+ 189.95 [519] His work boots, his sunglasses, the tools in the back?
+ 193.55 [529] The lender can keep the truck, but generally not his personal belongings.
+ 198.11 [541] Tyler has the right to get them back, though he may need to ask fast, and in writing.
+ 203.79 [559] So the truck is gone.
+ 205.47 [564] Debt's over, right?
+ 207.07 [567] Not even close.
+ 208.83 [570] In most states, Tyler gets a letter, a notice saying the truck is going to be sold, and when.
+ 214.95 [589] And it usually comes with options most people never hear about.
+ 218.83 [600] Option one: redeem.
+ 220.91 [603] Pay off the entire loan balance, plus the repo fees, and get the truck back.
+ 225.95 [618] Option two, in some states and some contracts: reinstate.
+ 230.55 [627] Catch up on just the missed payments and fees, and keep the loan going.
+ 234.91 [641] Tyler can't afford either one.
+ 237.39 [646] So the truck goes to auction.
+ 239.72 [652] And this is where it really starts to hurt.
+ 242.76 [661] Repossessed cars usually sell at wholesale auctions, often for far less than they'd bring in a normal sale.
+ 249.44 [679] Tyler still owed nineteen thousand dollars on his loan.
+ 252.96 [688] The truck sells for eleven thousand.
+ 255.60 [694] Then the lender adds the costs: the tow, the storage lot, getting it ready for auction.
+ 261.08 [710] Call it fifteen hundred dollars.
+ 263.44 [715] So let's do the math.
+ 265.08 [720] Nineteen thousand owed, minus eleven thousand from the sale, plus fifteen hundred in fees.
+ 271.40 [734] Tyler now owes nine thousand five hundred dollars.
+ 274.84 [742] On a truck he doesn't have anymore.
+ 277.48 [749] That's called a deficiency balance.
+ 279.88 [754] And yes, Tyler still legally owes it.
+ 282.92 [761] If Tyler ignores that bill, it follows the same path as almost any unpaid debt.
+ 288.12 [776] Collection calls.
+ 289.56 [778] Maybe the debt gets sold to a debt buyer.
+ 291.96 [787] And then, possibly, a lawsuit.
+ 294.68 [792] One afternoon, someone knocks on Tyler's door and hands him court papers.
+ 299.12 [804] If he doesn't respond and doesn't show up, the judge can rule against him automatically.
+ 304.16 [819] That's called a default judgment.
+ 306.28 [824] And a judgment gives the lender powerful new tools.
+ 309.76 [833] Tool number one: wage garnishment.
+ 312.52 [838] A court order telling Tyler's employer to take money out of his paycheck before he ever sees it.
+ 318.20 [856] Federal law generally caps this at twenty-five percent of his disposable earnings, and some states protect even more.
+ 325.28 [874] Tool number two: a bank levy.
+ 327.72 [880] In many states, the creditor can freeze Tyler's bank account and take money from it.
+ 332.48 [895] Tyler swipes his card at the gas station...
+ 335.08 [903] declined.
+ 336.12 [904] So now, the question everyone asks.
+ 338.84 [910] Can Tyler go to jail for not paying his car loan?
+ 342.04 [921] No.
+ 342.68 [922] In the United States, you can't be jailed just for owing money.
+ 346.44 [934] But there's a catch.
+ 347.96 [938] Two, actually.
+ 349.40 [940] First, if Tyler ignores a court order, like an order to show up and answer questions about his finances, a judge in some states can issue a warrant.
+ 358.44 [968] Not for the debt.
+ 359.64 [972] For ignoring the judge.
+ 361.48 [976] And second, this one surprises people.
+ 364.04 [982] Remember how Tyler was hiding the truck around the corner?
+ 367.00 [992] If he had gone further, hiding it in a friend's barn in another county, or selling it so the lender could never get it back, that can actually be a crime in some states.
+ 376.44 [1026] The debt isn't criminal.
+ 378.08 [1030] Hiding the collateral can be.
+ 380.24 [1035] There's one more twist almost nobody sees coming.
+ 383.52 [1043] Remember when Tyler bought the truck?
+ 385.36 [1049] His credit was thin, so his mom co-signed the loan.
+ 388.92 [1059] Every late payment, the repossession, the deficiency balance...
+ 392.88 [1067] all of it can land on her credit report too.
+ 395.48 [1077] And the lender can come after her for that nine thousand five hundred dollars, sometimes without even trying to collect from Tyler first.
+ 403.16 [1100] She did nothing wrong.
+ 404.68 [1104] She just signed one line to help her son.
+ 407.56 [1113] And Tyler's credit report?
+ 409.48 [1117] The late payments and the repossession generally stay there for seven years from when he first fell behind.
+ 415.48 [1135] For years, car loans, apartments, even some jobs that check credit, get harder.
+ 420.92 [1148] Or a lot more expensive.
+ 423.24 [1153] So let's rewind and watch the whole thing.
+ 426.04 [1161] Day one: a late fee.
+ 428.04 [1166] Day thirty: a hit to his credit score, and possibly default.
+ 432.20 [1177] Day sixty to ninety: a tow truck at three in the morning.
+ 436.20 [1189] Then the notice, the auction, and a nine thousand five hundred dollar bill for a truck he'll never drive again.
+ 442.76 [1209] Then collectors, a possible lawsuit, garnishment, a frozen bank account, his mom's credit damaged, and a mark on his record for seven years.
+ 452.04 [1232] All from one moment when Tyler decided to stop paying, and stop answering.
+ 457.48 [1245] Here's what people in Tyler's position usually learn too late.
+ 461.08 [1255] The earlier you act, the more options you have.
+ 464.04 [1264] Many lenders will move a payment to the end of the loan, called a deferral or extension, but you usually have to ask before you fall behind.
+ 472.12 [1291] You can try to refinance.
+ 473.88 [1296] And if you know you can't keep the car, selling it yourself almost always gets more than an auction will.
+ 479.80 [1316] Even handing it back voluntarily can save you the repo fees, though it still hurts your credit.
+ 485.24 [1333] Remember, laws are different in every state, and this video is general information, not financial or legal advice.
+ 492.44 [1351] If you're dealing with a real repossession or a lawsuit, talk to a licensed attorney, a legal aid office, or a nonprofit credit counselor near you.
+ 501.08 [1377] This is The Money Trail.
+ 502.88 [1382] We follow the money all the way to the end, so you don't have to find out the hard way.
+ 507.52 [1402] Next time: what happens if you never pay your student loans?
+ 511.28 [1413] Stick around.
