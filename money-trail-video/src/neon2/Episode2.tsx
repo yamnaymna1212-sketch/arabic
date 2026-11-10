@@ -11,7 +11,6 @@ import {
   Car,
   Clock,
   Coffee,
-  CreditCard,
   DollarSign,
   DoorClosed,
   FileText,
@@ -67,6 +66,7 @@ import {
   Mini,
   N,
   Pickup,
+  RealCard,
   RingPhone,
   Say,
   SceneDef,
@@ -913,7 +913,6 @@ const S_Gas: React.FC = () => {
       <Tyler x={[[W(874), 500], [W(874), 900, 1.6]]} poses={[[W(874), "idle", "neutral"], [W(895), "reach", "neutral"], [W(903), "up", "shock"]]} hold={<g transform="translate(-18,-12)"><rect x={0} y={0} width={36} height={24} rx={4} fill={N.fill} stroke={N.gold} strokeWidth={3} /></g>} />
       <Ico I={Landmark} x={1450} y={380} a={W(880)} b={W(895)} label="TYLER'S BANK" color={N.teal} size={120} />
       <Ico I={Lock} x={1620} y={300} a={W(886)} b={W(895)} label="FROZEN" color="#9fd8ff" size={100} />
-      <Ico I={CreditCard} x={1150} y={360} a={W(903)} b={W(904) + 0.4} color={N.red} size={110} cross={W(903)} />
     </Camera>
   );
 };
@@ -1239,6 +1238,8 @@ const Captions: React.FC = () => {
 /** Screen-space cards that stay from the first version (kept short). */
 const Cards: React.FC = () => (
   <>
+    <RealCard x={1400} y={470} a={0.5} b={W(17) - 0.2} w={600} strikeAt={W(14)} stamp="STOP" />
+    <RealCard x={1350} y={560} a={W(895)} b={W(904) + 0.3} w={520} declineAt={W(903)} />
     <TitleCard a={W(44)} b={W(68) - 0.3} />
     <NameTag a={W(70)} b={W(88)} name="TYLER" sub="27 · COLUMBUS, OHIO" />
     <Notice at={W(172)} b={W(190)} title="Auto Loan" body="Your payment is past due. A late fee was added." />
@@ -1251,7 +1252,6 @@ const Cards: React.FC = () => (
     <Stamp a={W(833)} b={W(845)} kicker="TOOL #1" text="WAGE GARNISHMENT" color={N.red} />
     <Paycheck a={W(856)} b={W(874) - 0.2} cutAt={W(857)} />
     <Stamp a={W(874)} b={W(886)} kicker="TOOL #2" text="BANK LEVY" color={N.red} />
-    <RubberStamp at={W(903)} b={W(904) + 0.6} text="DECLINED" size={140} y={-60} />
     <BigWords
       dx={260}
       items={[

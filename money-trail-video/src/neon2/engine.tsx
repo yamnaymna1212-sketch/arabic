@@ -912,3 +912,147 @@ export const RingPhone: React.FC<{ x: number; y: number; a: number; b: number; r
 };
 
 export { N };
+
+/** Realistic debit card (screen space): slides in with 3D tilt, metallic sheen, optional strike / declined. */
+export const RealCard: React.FC<{
+  x: number;
+  y: number;
+  a: number;
+  b: number;
+  w?: number;
+  strikeAt?: number;
+  declineAt?: number;
+  stamp?: string;
+}> = ({ x, y, a, b, w = 560, strikeAt, declineAt, stamp = "STOP" }) => {
+  const t = useT();
+  const pop = usePop();
+  if (t < a - 0.1 || t > b + 0.5) return null;
+  const h = w / 1.586;
+  const sIn = pop(a, 13);
+  const out = easeOut(clamp01((b + 0.4 - t) / 0.4));
+  const ry = -24 * (1 - sIn) + Math.sin(t * 1.3) * 7;
+  const rx = 8 + Math.sin(t * 0.9) * 3;
+  const sheen = ((t - a) * 0.45) % 1.6;
+  const sk = strikeAt !== undefined ? clamp01((t - strikeAt) / 0.3) : 0;
+  const dk = declineAt !== undefined ? clamp01((t - declineAt) / 0.2) : 0;
+  const shake = dk > 0 && t < (declineAt ?? 0) + 0.6 ? Math.sin(t * 80) * 10 * (1 - (t - (declineAt ?? 0)) / 0.6) : 0;
+  const red = sk > 0.5 || dk > 0.5;
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: x - w / 2 + shake,
+        top: y - h / 2,
+        width: w,
+        height: h,
+        perspective: 1400,
+        opacity: out,
+        transform: `translateX(${(1 - sIn) * 400}px) scale(${0.7 + 0.3 * sIn})`,
+      }}
+    >
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          borderRadius: w * 0.055,
+          transform: `rotateY(${ry}deg) rotateX(${rx}deg)`,
+          background: "linear-gradient(135deg, #0f3b2e 0%, #155c47 38%, #0b2a22 62%, #1d6b52 100%)",
+          boxShadow: `0 40px 80px rgba(0,0,0,0.6), 0 0 50px ${red ? "#ff5a5f66" : "#5af0b044"}`,
+          border: `2px solid ${red ? "#ff5a5f" : "rgba(160,255,215,0.35)"}`,
+          overflow: "hidden",
+          fontFamily: BODY,
+          color: "#e9fff6",
+        }}
+      >
+        <svg width={w} height={h} style={{ position: "absolute", inset: 0, opacity: 0.18 }}>
+          {Array.from({ length: 14 }, (_, i) => (
+            <circle key={i} cx={w * 0.95} cy={h * 1.05} r={40 + i * 34} fill="none" stroke="#9ff5d4" strokeWidth={1} />
+          ))}
+        </svg>
+        <div
+          style={{
+            position: "absolute",
+            top: -h,
+            bottom: -h,
+            width: w * 0.35,
+            left: (sheen - 0.4) * w,
+            background: "linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.22), rgba(255,255,255,0))",
+            transform: "rotate(18deg)",
+          }}
+        />
+        <div style={{ position: "absolute", left: w * 0.07, top: h * 0.09, fontWeight: 800, fontSize: w * 0.045, letterSpacing: 2 }}>TRAIL BANK</div>
+        <div style={{ position: "absolute", right: w * 0.07, top: h * 0.09, fontWeight: 700, fontSize: w * 0.032, letterSpacing: 3, opacity: 0.8 }}>DEBIT</div>
+        <div
+          style={{
+            position: "absolute",
+            left: w * 0.08,
+            top: h * 0.33,
+            width: w * 0.14,
+            height: h * 0.2,
+            borderRadius: 8,
+            background: "linear-gradient(135deg, #f7d77a, #c99a2e 55%, #f2cf6a)",
+            boxShadow: "inset 0 0 0 1px rgba(0,0,0,0.25)",
+          }}
+        >
+          <svg width="100%" height="100%" viewBox="0 0 70 52" style={{ position: "absolute", inset: 0 }} fill="none" stroke="rgba(90,60,10,0.55)" strokeWidth={1.5}>
+            <path d="M0 18 H24 V34 H0 M70 18 H46 V34 H70 M24 0 V52 M46 0 V52 M24 26 H46" />
+          </svg>
+        </div>
+        <svg width={w * 0.07} height={w * 0.07} viewBox="0 0 24 24" style={{ position: "absolute", left: w * 0.25, top: h * 0.355 }} fill="none" stroke="#e9fff6" strokeWidth={1.8} strokeLinecap="round">
+          <path d="M8.5 8 Q11 12 8.5 16" />
+          <path d="M12 6 Q15.5 12 12 18" />
+          <path d="M15.5 4 Q20 12 15.5 20" />
+        </svg>
+        <div
+          style={{
+            position: "absolute",
+            left: w * 0.08,
+            top: h * 0.6,
+            fontFamily: "monospace",
+            fontSize: w * 0.062,
+            letterSpacing: w * 0.008,
+            textShadow: "0 1px 0 rgba(0,0,0,0.6), 0 -1px 0 rgba(255,255,255,0.25)",
+          }}
+        >
+          4821 7730 1956 0042
+        </div>
+        <div style={{ position: "absolute", left: w * 0.08, bottom: h * 0.09, fontWeight: 700, fontSize: w * 0.038, letterSpacing: 2 }}>TYLER BROOKS</div>
+        <div style={{ position: "absolute", left: w * 0.55, bottom: h * 0.09, fontSize: w * 0.026, opacity: 0.85, lineHeight: 1.1 }}>
+          VALID
+          <br />
+          THRU <b style={{ fontSize: w * 0.034 }}>08/29</b>
+        </div>
+        <div style={{ position: "absolute", right: w * 0.07, bottom: h * 0.07, display: "flex" }}>
+          <div style={{ width: w * 0.08, height: w * 0.08, borderRadius: w, background: "#5af0b0", opacity: 0.9 }} />
+          <div style={{ width: w * 0.08, height: w * 0.08, borderRadius: w, background: "#f6c453", opacity: 0.85, marginLeft: -w * 0.03 }} />
+        </div>
+        {dk > 0 ? <div style={{ position: "absolute", inset: 0, background: `rgba(255,40,50,${0.35 * dk})` }} /> : null}
+      </div>
+      {sk > 0 ? (
+        <svg width={w} height={h} style={{ position: "absolute", inset: 0, overflow: "visible", filter: "drop-shadow(0 0 12px #ff5a5f)" }}>
+          <line x1={-30} y1={h + 20} x2={-30 + (w + 60) * sk} y2={h + 20 - (h + 40) * sk} stroke="#ff5a5f" strokeWidth={18} strokeLinecap="round" />
+        </svg>
+      ) : null}
+      {(sk > 0.6 || dk > 0.6) && stamp ? (
+        <div
+          style={{
+            position: "absolute",
+            left: "50%",
+            top: "50%",
+            transform: `translate(-50%,-50%) rotate(-12deg) scale(${1 + 0.6 * (1 - Math.min(1, (sk || dk) * 1.4 - 0.4))})`,
+            border: "8px solid #ff5a5f",
+            color: "#ff5a5f",
+            fontFamily: DISPLAY,
+            fontSize: w * 0.18,
+            padding: "0 26px",
+            borderRadius: 14,
+            background: "rgba(10,0,0,0.55)",
+            letterSpacing: 4,
+          }}
+        >
+          {dk > 0 ? "DECLINED" : stamp}
+        </div>
+      ) : null}
+    </div>
+  );
+};
