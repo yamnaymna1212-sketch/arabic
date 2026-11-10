@@ -119,7 +119,23 @@ stubble, olive work jacket over grey hoodie)…"*.
 6. Render and master (see `money-trail-video/README.md`).
 7. Thumbnails: `Thumb-A` / `Thumb-B` stills.
 
-## 5. Next episode ideas (same formula, same Tyler)
+## 5. Budget rules (always follow, credits are limited)
+
+Episode 1 cost about **85,000 ElevenLabs credits** because everything was new:
+character sheet (4 options) ~4,900 · 24 scenes ~38,400 · narration with 2 takes ~15,800 ·
+music ~4,500 · 10 animated clips ~21,200. Transcription was free.
+
+From Episode 2 on, target **15,000–25,000 credits per episode**:
+
+- **Reuse first.** Tyler, Mom, the 24 locations and the music score are already paid for. Never regenerate them.
+- **New scenes: max 5–8 per episode**, `generations_count: 1`, only places the topic really needs.
+- **Narration: 1 take per part**, not 2. Check the script carefully *before* generating; regenerating costs the same again.
+- **Animated clips: optional, max 3–5** of the most important moments, 5 s, no audio. Skip them if credits are low; stills with camera moves work fine.
+- **Music: reuse `public/music/score.mp3`.** Only make a new track for a very different mood.
+- **Always run `estimate_only` first** and show the price before any batch.
+- Rendering, editing, thumbnails and re-renders are local and **cost no credits**.
+
+## 6. Next episode ideas (same formula, same Tyler)
 
 1. What happens if you never pay your student loans?
 2. What happens if you stop paying rent?
