@@ -1,6 +1,7 @@
 import { Composition, Folder, Still } from "remotion";
 import { EP1_SECONDS, Episode1 } from "./Episode";
 import { FPS } from "./lib";
+import { NeonEpisode1 } from "./neon/NeonEpisode";
 import { ThumbA, ThumbB } from "./Thumbnail";
 import { Banner, Logo } from "./Brand";
 
@@ -9,6 +10,14 @@ export const RemotionRoot: React.FC = () => (
     <Composition
       id="Ep1-CarLoan"
       component={Episode1}
+      durationInFrames={Math.ceil(EP1_SECONDS * FPS)}
+      fps={FPS}
+      width={1920}
+      height={1080}
+    />
+    <Composition
+      id="Ep1-Neon"
+      component={NeonEpisode1}
       durationInFrames={Math.ceil(EP1_SECONDS * FPS)}
       fps={FPS}
       width={1920}

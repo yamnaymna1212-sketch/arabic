@@ -266,13 +266,18 @@ export const Stamp: React.FC<{ a: number; b: number; kicker?: string; text: stri
 };
 
 /** Frosted glass card. */
-export const Card: React.FC<{ style?: React.CSSProperties; children: React.ReactNode }> = ({ style, children }) => (
+/** "film" = cinematic dark glass, "neon" = green glass panels of the neon style. */
+export const ThemeCtx = React.createContext<"film" | "neon">("film");
+
+export const Card: React.FC<{ style?: React.CSSProperties; children: React.ReactNode }> = ({ style, children }) => {
+  const neon = React.useContext(ThemeCtx) === "neon";
+  return (
   <div
     style={{
-      background: "rgba(12,14,18,0.72)",
-      border: "1px solid rgba(255,255,255,0.12)",
-      borderRadius: 22,
-      boxShadow: "0 30px 80px rgba(0,0,0,0.5)",
+      background: neon ? "linear-gradient(160deg, rgba(34,74,58,0.78), rgba(14,34,27,0.82))" : "rgba(12,14,18,0.72)",
+      border: neon ? "1.5px solid rgba(110,231,183,0.45)" : "1px solid rgba(255,255,255,0.12)",
+      borderRadius: neon ? 28 : 22,
+      boxShadow: neon ? "0 0 40px rgba(61,220,151,0.18), 0 30px 80px rgba(0,0,0,0.5)" : "0 30px 80px rgba(0,0,0,0.5)",
       backdropFilter: "blur(14px)",
       color: C.paper,
       fontFamily: BODY,
@@ -281,6 +286,7 @@ export const Card: React.FC<{ style?: React.CSSProperties; children: React.React
   >
     {children}
   </div>
-);
+  );
+};
 
 export const money = (n: number) => "$" + Math.round(n).toLocaleString("en-US");

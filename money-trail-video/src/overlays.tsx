@@ -1,6 +1,6 @@
 import React from "react";
 import { AbsoluteFill, interpolate } from "remotion";
-import { BAR, BODY, C, Card, DISPLAY, money, pop, prog, useT, W, win } from "./lib";
+import { BAR, BODY, C, Card, DISPLAY, money, pop, prog, ThemeCtx, useT, W, win } from "./lib";
 
 const center: React.CSSProperties = {
   position: "absolute",
@@ -11,14 +11,15 @@ const center: React.CSSProperties = {
 };
 
 /** Big centered words that replace each other ("NO CALL." → "NO WARNING."). */
-export const BigWords: React.FC<{ items: { at: number; to: number; text: string; color?: string; size?: number }[] }> = ({
+export const BigWords: React.FC<{ items: { at: number; to: number; text: string; color?: string; size?: number }[]; dx?: number }> = ({
   items,
+  dx = 0,
 }) => {
   const t = useT();
   return (
     <>
       {items.map((it, i) => (
-        <div key={i} style={{ ...center, ...pop(t, it.at, it.to) }}>
+        <div key={i} style={{ ...center, ...pop(t, it.at, it.to), left: dx }}>
           <div
             style={{
               fontFamily: DISPLAY,
@@ -126,10 +127,11 @@ export const TitleCard: React.FC<{ a: number; b: number }> = ({ a, b }) => {
 /** Name tag lower-left. */
 export const NameTag: React.FC<{ a: number; b: number; name: string; sub: string }> = ({ a, b, name, sub }) => {
   const t = useT();
+  const neon = React.useContext(ThemeCtx) === "neon";
   const o = win(t, a, b, 0.4, 0.4);
   const w = prog(t, a, a + 0.7);
   return (
-    <div style={{ position: "absolute", left: 90, bottom: BAR + 70, opacity: o }}>
+    <div style={{ position: "absolute", left: neon ? 580 : 90, bottom: neon ? 330 : BAR + 70, opacity: o }}>
       <div style={{ height: 5, width: 420 * w, background: C.gold, marginBottom: 14 }} />
       <div style={{ fontFamily: DISPLAY, fontSize: 96, color: C.paper, lineHeight: 0.9 }}>{name}</div>
       <div style={{ fontFamily: BODY, fontWeight: 600, fontSize: 30, color: C.dim, letterSpacing: 2, marginTop: 6 }}>
@@ -320,8 +322,11 @@ export const Chips: React.FC<{
   items: { at: number; text: string; color?: string }[];
   bottom?: number;
   left?: number;
-}> = ({ b, items, bottom = BAR + 70, left = 90 }) => {
+}> = ({ b, items, bottom: b0, left: l0 }) => {
   const t = useT();
+  const neon = React.useContext(ThemeCtx) === "neon";
+  const bottom = b0 ?? (neon ? 150 : BAR + 70);
+  const left = l0 ?? (neon ? 640 : 90);
   return (
     <div style={{ position: "absolute", left, bottom, display: "flex", gap: 18 }}>
       {items.map((it, i) => (

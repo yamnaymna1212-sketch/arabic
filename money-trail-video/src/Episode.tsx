@@ -123,7 +123,7 @@ const Plates: React.FC = () => {
   );
 };
 
-const Overlays: React.FC = () => (
+export const Overlays: React.FC<{ neon?: boolean }> = ({ neon = false }) => (
   <>
     {/* HOOK */}
     <BigWords
@@ -297,13 +297,14 @@ const Overlays: React.FC = () => (
 
     {/* JAIL */}
     <BigWords
+      dx={neon ? 240 : 0}
       items={[
         { at: W(910), to: W(921) - 0.1, text: "CAN TYLER GO\nTO JAIL?".replace("\n", " "), size: 150 },
         { at: W(921), to: W(934) - 0.1, text: "NO.", color: C.green, size: 300 },
       ]}
     />
     <Chips b={W(934)} items={[{ at: W(922), text: "NOT JUST FOR OWING MONEY", color: C.green }]} />
-    <BigWords items={[{ at: W(934), to: W(940) - 0.1, text: "BUT THERE'S A CATCH.", color: C.gold, size: 150 }]} />
+    <BigWords dx={neon ? 240 : 0} items={[{ at: W(934), to: W(940) - 0.1, text: "BUT THERE'S A CATCH.", color: C.gold, size: 150 }]} />
     <Stamp a={W(940)} b={W(976) - 0.2} kicker="CATCH #1" text="IGNORING THE JUDGE" color={C.red} />
     <Chips b={W(976) - 0.2} items={[{ at: W(960), text: "→ POSSIBLE WARRANT (SOME STATES)", color: C.red }]} />
     <Stamp a={W(976)} b={W(1026) - 0.2} kicker="CATCH #2" text="HIDING THE TRUCK" color={C.red} />
@@ -327,7 +328,7 @@ const Overlays: React.FC = () => (
     <NameTag a={W(1054)} b={W(1077) - 0.2} name="MOM" sub="CO-SIGNER ON TYLER'S LOAN" />
     <Chips
       b={W(1077) - 0.2}
-      left={900}
+      left={neon ? 560 : 900}
       items={[
         { at: W(1059), text: "LATE PAYMENTS", color: C.red },
         { at: W(1062), text: "REPO", color: C.red },
@@ -395,7 +396,7 @@ const s = (at: number, src: string, vol = 0.5): Sfx => ({ at, src, vol });
 const WH = "sfx/rm-whoosh.wav";
 const HIT = "sfx/impactSoft_medium_000.wav";
 const BOOM = "sfx/boom.mp3";
-const SFX: Sfx[] = [
+export const SFX: Sfx[] = [
   s(W(10), HIT, 0.5),
   s(W(12), HIT, 0.5),
   s(W(14), BOOM, 0.6),
@@ -462,7 +463,7 @@ const SFX: Sfx[] = [
   s(W(1377), BOOM, 0.45),
 ];
 
-const Music: React.FC = () => (
+export const Music: React.FC = () => (
   <Audio
     src={staticFile("music/score.mp3")}
     volume={(f) => {
