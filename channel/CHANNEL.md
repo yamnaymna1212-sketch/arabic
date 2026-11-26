@@ -12,6 +12,10 @@ grade, film grain, letterbox bars, slow camera moves. Clean motion graphics on t
 (day stamps, cards, gauges, math). This is the main difference from the competitor
 (Legal Lens), whose style is a flat cartoon character on a plain background.
 
+> **From Episode 2 on, the visual style is "Clean Ledger"** (bright, clean, no robot host,
+> no dark/neon backgrounds, varied endings): see [`STYLE-CLEAN.md`](STYLE-CLEAN.md), including
+> the YouTube monetization-safety checklist. Research behind it: `reports/US finance YouTube styles.md`.
+
 ---
 
 ## 1. The episode structure (taken from the competitor's best video)
